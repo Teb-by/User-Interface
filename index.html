@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Banking App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+</head>
+<body>
+    <!-- Registration Section -->
+    <div id="registrationSection">
+        <h1>Register Your Account</h1>
+        <input type="text" id="registerUser" placeholder="Username" required>
+        <input type="email" id="registerEmail" placeholder="Email" required>
+        <input type="password" id="registerPass" placeholder="Password" required>
+        <input type="password" id="registerPassConfirm" placeholder="Confirm Password" required>
+        <input type="text" id="registerAddress" placeholder="Account Address" required>
+        <button onclick="register()">Register</button>
+        <p><button onclick="showLogin()">Already have an account? Login</button></p>
+    </div>
+
+    <!-- Login Section -->
+<div id="loginSection">
+    <h1>Login to Your Account</h1>
+    <input type="text" id="loginUser" placeholder="Username" required>
+    <input type="password" id="loginPass" placeholder="Password" required>
+    <input type="text" id="accountAddress" placeholder="Account Address" required>
+    <button onclick="login()">Login</button>
+    <p><button onclick="showRegistration()">Need to register? Sign up here!</button></p>
+</div>
+
+    <!-- App Section -->
+    <div class="app-container" id="appContainer">
+        <h1>Mobile Banking App</h1>
+        <!-- Banking Operations -->
+        <h2 id="greeting">Hello!</h2>
+        <input type="number" id="amount" placeholder="Enter Amount (ETH)" min="0.01" step="0.01" required>
+        <button onclick="deposit()">Deposit</button>
+        <button onclick="transfer()">Transfer</button>
+        <button onclick="getBalance()">Check Balance</button>
+        <button onclick="fetchAndDisplayTransactionHistory()">View Transaction History</button>
+        <button onclick="showKYCContainer()">Manage KYC</button>
+        <p id="bankingStatus"></p>
+    </div>
+        <!-- KYC Management Section -->
+    <div class="kyc-container" id="kyc">
+        <h1>KYC Management</h1>
+        <input type="text" id="kycName" placeholder="Enter Name for KYC" required>
+        <input type="text" id="kycIdNumber" placeholder="Enter ID Number" required>
+        <button onclick="updateKYC()">Update KYC</button>
+        <button onclick="checkKYC()">Check KYC Status</button>
+        <button onclick="showAppContainer()">Return to Main App</button>
+        <p id="kycStatus"></p>
+    </div>
+<!-- Transaction History Page -->
+<div class="transaction-history-page" id="transactionHistoryPage">
+    <h1>Transaction History</h1>
+    <table id="transactionHistory">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Event Type</th>
+                <th>Amount (ETH)</th>
+                <th>From</th>
+                <th>To</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Transaction rows will be dynamically inserted here -->
+        </tbody>
+    </table>
+    <button onclick="goBack()">Go Back</button>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f4f4f9;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Container for login, registration, and app sections */
+.app-container, #loginSection, #registrationSection, #transactionHistoryPage, #kyc {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555;
+    margin: 20px 0;
+    font-size: 1.25rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"] {
+    width: calc(100% - 40px);
+    padding: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    width: calc(100% - 40px);
+    padding: 15px;
+    border: 2px solid #007BFF;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+/* Hide all sections initially except the registration section */
+#registrationSection {
+    display: block; /* Show by default */
+}
+
+#loginSection, #appContainer, #kyc, #transactionHistoryPage {
+    display: none; /* Hide by default */
+}
+
+p {
+    color: #666;
+    margin-top: 15px;
+}
+
+/* Transaction history page and Registration page styles */
+.transaction-history-page, #registrationSection {
+    padding: 20px;
+    text-align: center;
+}
+
+.transaction-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #ccc;
+}
+
+.transaction-item:last-child {
+    border-bottom: none;
+}
+
+/* Table Styles for Transaction History */
+#transactionHistory {
+    width: 80%;
+    overflow-x: auto; /* Allows horizontal scrolling on small devices */
+}
+
+#transactionHistory th, #transactionHistory td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#transactionHistory th {
+    background-color: #f0f0f0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .app-container, #loginSection, #registrationSection {
+        padding: 15px;
+    }
+
+    h1, h2 {
+        margin-top: 15px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"], input[type="number"], button {
+        width: calc(100% - 30px);
+    }
+
+    #transactionHistory th:nth-child(2), #transactionHistory td:nth-child(2) {
+        display: none; /* Example: Hide the second column on small screens */
+    }
+
+    #transactionHistory th, #transactionHistory td {
+        padding: 5px; /* Smaller padding for smaller screens */
+    }
+}
